@@ -1,29 +1,31 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 05:27:14
-         compiled from profesiones.html */ ?>
+<?php /* Smarty version 2.6.26, created on 2015-08-10 05:34:29
+         compiled from niveles.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Profesiones')));
+$this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Niveles de Acceso')));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<?php if ($_SESSION['mensaje']): ?>
-</p>
-<div id="mensaje"><?php echo $_SESSION['mensaje']; ?>
-</div>
-<?php endif; ?>
-<?php echo $this->_tpl_vars['f1']; ?>
+<table width="90%">
+<tr>
+	<td><?php echo $this->_tpl_vars['f1']; ?>
 
-</p>
+	<div id="mensaje"><?php echo $_SESSION['mensaje']; ?>
+</div>
+</td>
+</tr>
+</table>
+<p></p>
 <div id="resultados">
 <table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
 <thead>
 <tr>
-	<th colspan="2">PROFESIONES</th>
+	<th colspan="2">NIVEL DE ACCESO</th>
 </tr>
 </thead>
 <tbody>
 <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
-$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['profesiones']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['niveles']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
 $this->_sections['i']['max'] = $this->_sections['i']['loop'];
 $this->_sections['i']['step'] = 1;
@@ -46,9 +48,9 @@ $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
 <tr>
-	<td><?php echo $this->_tpl_vars['profesiones'][$this->_sections['i']['index']]['nombre']; ?>
+	<td><?php echo $this->_tpl_vars['niveles'][$this->_sections['i']['index']]['nombre']; ?>
 </td>
-	<td width="10%"><a href="?id=<?php echo $this->_tpl_vars['profesiones'][$this->_sections['i']['index']]['id']; ?>
+	<td width="10%"><a href="?id=<?php echo $this->_tpl_vars['niveles'][$this->_sections['i']['index']]['id']; ?>
 "><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
 </tr>
 <?php endfor; endif; ?>

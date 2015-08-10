@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-08 21:33:52
+<?php /* Smarty version 2.6.26, created on 2015-08-10 05:27:31
          compiled from cargos.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Cargos de Personal')));

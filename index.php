@@ -23,7 +23,7 @@ function procesar($d)
 	{
 		session_start();
 		$_SESSION['usuario']=$res;
- 		ir('registrar_personal.php');
+ 		ir('rp_cons_trabajo.php');
 	}
 	else
 	{

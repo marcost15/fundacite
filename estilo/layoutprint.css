@@ -1,7 +1,22 @@
 @media print{
-#banner,#baner2,#titulo, #menu, #indice, #pie, #boton {
+#titulo, #divmenu, #indice, #boton {
 	display:none;
 }
+
+#fondo{
+    width:1052px;
+	background-color: #ffffff;
+	margin:auto;
+	border: solid 2px #ffffff;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15px;
+}
+
+#pie{
+	border: solid 2px #ffffff;
+}
+
 #titulo2{
 	display:inline;
 }

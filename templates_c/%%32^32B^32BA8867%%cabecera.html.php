@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-08 21:15:17
+<?php /* Smarty version 2.6.26, created on 2015-08-10 05:31:04
          compiled from cabecera.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', 'cabecera.html', 7, false),)), $this); ?>
@@ -25,7 +25,8 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'default', '
 	</head> 
 	<body background="./imagenes/papel_tapiz.jpg" topmargin="0" leftmargin="0">
 		<div id = "fondo">
-		<div id="banner"><img src="./imagenes/banner.jpg" width="1050" height="200"/></div>
+		<div id="banner2"><img src="./imagenes/banner2.png" width="1050" height="60"/></div>
+		<div id="banner"><img src="./imagenes/banner.jpg" width="1052" height="163"/></div>
 		<div id="titulo">FUNDACITE - SISTEMA DE PERSONAL <?php if ($_SESSION['usuario']): ?> Usuario: <?php echo $_SESSION['usuario']['nombre']; ?>
  <?php echo $_SESSION['usuario']['apellido']; ?>
 <?php endif; ?></div><!-- titulo -->				

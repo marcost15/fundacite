@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 05:27:14
-         compiled from profesiones.html */ ?>
+<?php /* Smarty version 2.6.26, created on 2015-08-10 05:27:03
+         compiled from grado_instruccion.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Profesiones')));
+$this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Grado Instruccion')));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
@@ -17,13 +17,13 @@ unset($_smarty_tpl_vars);
 <table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
 <thead>
 <tr>
-	<th colspan="2">PROFESIONES</th>
+	<th colspan="2">Grados de Instruccion</th>
 </tr>
 </thead>
 <tbody>
 <?php unset($this->_sections['i']);
 $this->_sections['i']['name'] = 'i';
-$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['profesiones']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
+$this->_sections['i']['loop'] = is_array($_loop=$this->_tpl_vars['grado_instruccion']) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $this->_sections['i']['show'] = true;
 $this->_sections['i']['max'] = $this->_sections['i']['loop'];
 $this->_sections['i']['step'] = 1;
@@ -46,9 +46,9 @@ $this->_sections['i']['first']      = ($this->_sections['i']['iteration'] == 1);
 $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $this->_sections['i']['total']);
 ?>
 <tr>
-	<td><?php echo $this->_tpl_vars['profesiones'][$this->_sections['i']['index']]['nombre']; ?>
+	<td><?php echo $this->_tpl_vars['grado_instruccion'][$this->_sections['i']['index']]['nombre']; ?>
 </td>
-	<td width="10%"><a href="?id=<?php echo $this->_tpl_vars['profesiones'][$this->_sections['i']['index']]['id']; ?>
+	<td width="10%"><a href="?id=<?php echo $this->_tpl_vars['grado_instruccion'][$this->_sections['i']['index']]['id']; ?>
 "><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
 </tr>
 <?php endfor; endif; ?>

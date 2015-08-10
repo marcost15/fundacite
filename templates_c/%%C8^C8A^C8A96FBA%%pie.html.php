@@ -1,12 +1,9 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-08 21:04:35
+<?php /* Smarty version 2.6.26, created on 2015-08-10 04:56:19
          compiled from pie.html */ ?>
 <!-- /Contenido-->
 			</div><!-- contenido -->	
-			<div id="pie">Desarrollado en Turbocare Zona Industrial, calle 146,
-Esq. Av. 62 parcela Nro 5,
-Diagonal al Cuerpo de Bomberos.
-Maracaibo, Venezuela.</br> Por Duverlis Delgado</br>
-					Todos los derechos Reservados
+			<div id="pie">Dirección: Av. Medina Angarita Sector Carmona, Edif. Doña Lucia, Planta Baja.  Trujillo, Estado Trujillo,</br>
+Venezuela Telefax: 0272-236.52.75.  RIF: G–20007798–0
                   </div><!-- pie -->		
 		</div><!-- fondo -->	
 	</body>

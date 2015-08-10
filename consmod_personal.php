@@ -7,11 +7,11 @@ include './configs/funciones.php';
 include './modelo/bd_verificar_privilegios.php';
 include './modelo/bd_buscar_personal.php';
 include './modelo/bd_obt_niveles.php';
-$_SESSION['ini']=parse_ini_file('./configs/config.ini',true);
 if (bd_verificar_privilegios('consmod_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
 {
 	ir('negacion_usuario.php');
 }
+
 $error1 = '0';
 
 $f1  = new formHandler('busqueda_personal',NULL,'onclick="highlight(event)"');
@@ -34,7 +34,7 @@ if (isset($_REQUEST['accion']))
 			}
 			foreach ($datos15 as $i=>$c)
 			{
-				$datos15[$i]['nivel_id'] = bd_obt_niveles(0,$datos15[$i]['nivel_id']);
+				$datos15[$i]['nivel_id'] = bd_obt_niveles($datos15[$i]['nivel_id']);
 			}
 			$smarty->assign('error1',$error1);
 			$smarty->assign('datos', $datos15);
@@ -53,7 +53,7 @@ function procesar($d)
 	}
 	foreach ($datos15 as $i=>$c)
 	{
-		$datos15[$i]['nivel_id'] = bd_obt_niveles(0,$datos15[$i]['nivel_id']);
+		$datos15[$i]['nivel_id'] = bd_obt_niveles($datos15[$i]['nivel_id']);
 	}
 	$smarty->assign('error1',$error1);
 	$smarty->assign('datos',$datos15);

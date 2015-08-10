@@ -6,7 +6,7 @@
 <table class = "retiro" align = "center" border="1">
 	<tr>
 		<th>Cedula</th>
-		<td>{$ficha.id}</td>
+		<td>{$ficha.nac}-{$ficha.cedula}</td>
 	</tr>
 	<tr>
 		<th>Apellido</th>
@@ -51,16 +51,24 @@
 		<td>{$ficha.nivel_id}</td>
 	</tr>
 	<tr>
+		<th>Fecha de ingreso</th>
+		<td>{$ficha.fecha_ing}</td>
+	</tr>
+	<tr>
 		<th>Grado de Intruccion</th>
-		<td>{$ficha.grado_instr}%</td>
+		<td>{$ficha.grado_instruccion_id}</td>
 	</tr>
 	<tr>
 		<th>Cargo</th>
 		<td>{$ficha.cargo_id}</td>
 	</tr>
 	<tr>
-		<th>Gerencia</th>
-		<td>{$ficha.gerencia_id}</td>
+		<th>Profesion</th>
+		<td>{$ficha.profesion_id}</td>
+	</tr>
+	<tr>
+		<th>Salario</th>
+		<td>{$ficha.salario}</td>
 	</tr>
 </table>
 <p></p>

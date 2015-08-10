@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-08 21:05:12
+<?php /* Smarty version 2.6.26, created on 2015-08-10 04:05:15
          compiled from negacion_usuario.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
