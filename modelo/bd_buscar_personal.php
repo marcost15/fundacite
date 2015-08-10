@@ -5,14 +5,14 @@ function bd_buscar_personal($tipo,$texto)
 	{
 		case 1: //Busqueda por letra de apellido
 			$letra=$texto;
-			$sql = "SELECT  id,apellido,nombre,login,nivel_id,estado,CONCAT( apellido, ', ', nombre ) AS nombreape
+			$sql = "SELECT  id,cedula,apellido,nombre,login,nivel_id,estado,CONCAT( apellido, ', ', nombre ) AS nombreape
 							FROM personal
 							WHERE estado LIKE 'ACTIVO'
 							AND apellido   LIKE  '{$letra}%'
 							ORDER BY apellido ASC";
 			break;
 		case 2: //Busqueda de texto completo
-			$sql = "SELECT id,apellido,nombre,login,nivel_id,estado,CONCAT( apellido, ', ', nombre ) AS nombreape
+			$sql = "SELECT id,cedula,apellido,nombre,login,nivel_id,estado,CONCAT( apellido, ', ', nombre ) AS nombreape
 							FROM personal
 							WHERE estado     LIKE 'ACTIVO'
 							AND(id           LIKE '%$texto%' 
