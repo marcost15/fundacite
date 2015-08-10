@@ -11,10 +11,10 @@ include './modelo/bd_obt_profesiones.php';
 include './modelo/bd_obt_grado_instruccion.php';
 include './modelo/bd_obt_clasificacion.php';
 include './modelo/bd_verificar_privilegios.php';
-/*if (bd_verificar_privilegios('ficha_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
+if (bd_verificar_privilegios('rp_cons_trabajo.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
 {
 	ir('negacion_usuario.php');
-}*/
+}
 
 $personal = bd_ficha_personal($_SESSION['usuario']['id']);
 $personal['nivel_id'] = bd_obt_niveles($personal['nivel_id']);

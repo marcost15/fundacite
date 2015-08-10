@@ -11,10 +11,10 @@ include './modelo/bd_lista_profesiones.php';
 include './modelo/bd_lista_clasificacion.php';
 include './modelo/bd_guardar_personal.php';
 include './modelo/bd_verificar_privilegios.php';
-/*if (bd_verificar_privilegios('registrar_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
+if (bd_verificar_privilegios('registrar_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
 {
 	ir('negacion_usuario.php');
-}*/
+}
 $foto = array(
   "path"        => './upload/personal',
   "type" 	=> "JPG jpg JPEG jpeg GIF gif PNG png BMP bmp",

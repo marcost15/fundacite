@@ -9,10 +9,10 @@ include './modelo/bd_cambiar_privilegios.php';
 include './modelo/bd_obt_privilegios.php';
 include './modelo/bd_obt_niveles.php';
 include './modelo/bd_verificar_privilegios.php';
-/*if (bd_verificar_privilegios('privilegios.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
+if (bd_verificar_privilegios('privilegios.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
 {
 	ir('negacion_usuario.php');
-}*/
+}
 
 
 if(isset($_REQUEST['accion']))

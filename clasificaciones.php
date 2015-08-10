@@ -6,11 +6,10 @@ include './configs/bd.php';
 include './configs/bdfh3.php';
 include './modelo/bd_obt_clasificacion.php';
 include './modelo/bd_verificar_privilegios.php';
-
-/*if (bd_verificar_privilegios('cargos.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
+if (bd_verificar_privilegios('clasificacion.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
 {
 	ir('negacion_usuario.php');
-}*/
+}
 
 $f1=new dbFormHandler('clasificacion',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
