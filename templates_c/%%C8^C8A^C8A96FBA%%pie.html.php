@@ -1,9 +1,9 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 03:36:56
+<?php /* Smarty version 2.6.26, created on 2015-08-10 04:56:19
          compiled from pie.html */ ?>
 <!-- /Contenido-->
 			</div><!-- contenido -->	
-			<div id="pie">Desarrollado en Fundacite Trujillo.
-					Todos los derechos Reservados
+			<div id="pie">Dirección: Av. Medina Angarita Sector Carmona, Edif. Doña Lucia, Planta Baja.  Trujillo, Estado Trujillo,</br>
+Venezuela Telefax: 0272-236.52.75.  RIF: G–20007798–0
                   </div><!-- pie -->		
 		</div><!-- fondo -->	
 	</body>

@@ -1,8 +1,9 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 03:36:56
+<?php /* Smarty version 2.6.26, created on 2015-08-10 05:02:38
          compiled from ../menu/menu.html */ ?>
 ﻿<li><a href="#"><span>Admin BD</span></a>
 	<ul>
 		<li title="Cargos"><a href="cargos.php">Cargos</a></li>
+		<li title="Clasificacion"><a href="clasificaciones.php">Clasificaciones</a></li>
 		<li title="profesiones"><a href="profesiones.php">Profesiones</a></li>
 		<li title="Grado de Instruccion"><a href="grado_instruccion.php">Grado de Instruccion</a></li>
 		<li title="Niveles"><a href="niveles.php">Niveles</a></li>
@@ -18,7 +19,7 @@
 </li>
 <li><a href="#"><span>Reportes</span></a>
 	<ul>
-		<li><a href="rp_cons_constancia_trabajo.php">Constancia de Trabajo</a></li>
+		<li><a href="rp_cons_trabajo.php">Constancia de Trabajo</a></li>
 	</ul>
 </li>
 <li class="topfirst"><a href="index.php">Salir</a></li>

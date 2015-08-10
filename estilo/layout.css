@@ -219,3 +219,12 @@ textarea.LV_invalid_field:hover,
 textarea.LV_invalid_field:active {
     border: 1px solid #CC0000;
 }
+
+#constancia{
+	width : 75%;
+	font-size:medium;
+	font-family:arial;
+	line-height : 35px;
+	text-align:justify;
+	margin: 0 auto;
+}

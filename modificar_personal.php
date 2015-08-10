@@ -9,6 +9,7 @@ include './modelo/bd_lista_niveles.php';
 include './modelo/bd_lista_cargos.php';
 include './modelo/bd_lista_grado_instruccion.php';
 include './modelo/bd_lista_profesiones.php';
+include './modelo/bd_lista_clasificacion.php';
 include './modelo/bd_modificar_personal.php';
 include './modelo/bd_verificar_privilegios.php';
 /*if (bd_verificar_privilegios('modificar_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
@@ -67,6 +68,8 @@ $f1->selectField("Grado de Instruccion", "grado_instruccion_id",bd_lista_grado_i
 $f1->setValue('grado_instruccion_id', $personal['grado_instruccion_id']);
 $f1->selectField("Profesión", "profesion_id",bd_lista_profesiones(),FH_NOT_EMPTY,true);
 $f1->setValue('profesion_id', $personal['profesion_id']);
+$f1->selectField("Clasificacion", "clasificacion_id",bd_lista_clasificacion(),FH_NOT_EMPTY,true);
+$f1->setValue('clasificacion_id', $personal['clasificacion_id']);
 $f1->textField('Salario','salario',FH_DIGIT,30,30,"onkeyup=\"return ValNumero(this);\"");
 $f1->setValue('salario', $personal['salario']);
 $f1->uploadField('Foto', 'foto', $foto);
