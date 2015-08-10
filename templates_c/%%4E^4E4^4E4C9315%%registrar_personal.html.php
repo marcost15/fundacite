@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-08 21:15:57
+<?php /* Smarty version 2.6.26, created on 2015-08-10 03:36:56
          compiled from registrar_personal.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Registrar Personal')));

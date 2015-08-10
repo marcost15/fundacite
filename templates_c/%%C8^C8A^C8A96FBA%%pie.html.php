@@ -1,11 +1,8 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-08 21:04:35
+<?php /* Smarty version 2.6.26, created on 2015-08-10 03:36:56
          compiled from pie.html */ ?>
 <!-- /Contenido-->
 			</div><!-- contenido -->	
-			<div id="pie">Desarrollado en Turbocare Zona Industrial, calle 146,
-Esq. Av. 62 parcela Nro 5,
-Diagonal al Cuerpo de Bomberos.
-Maracaibo, Venezuela.</br> Por Duverlis Delgado</br>
+			<div id="pie">Desarrollado en Fundacite Trujillo.
 					Todos los derechos Reservados
                   </div><!-- pie -->		
 		</div><!-- fondo -->	

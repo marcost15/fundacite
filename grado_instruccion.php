@@ -12,11 +12,11 @@ include './modelo/bd_verificar_privilegios.php';
 	ir('negacion_usuario.php');
 }*/
 
-$f1=new dbFormHandler('grado_instruccion',NULL,'onclick="highlight(event)"');
+$f1=new dbFormHandler('grado_instr',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
 $f1->setConnectionResource($link,'grado_instruccion','mysql');
 $f1->borderStart('Grados de Instruccion de Empleados');
-$f1->textField('Grado de Instrucción','nombre',FH_NOT_EMPTY,30,255,"onkeyup=\"profesiones.nombre.value=profesiones.nombre.value.toUpperCase();\"");
+$f1->textField('Grado de Instrucción','nombre',FH_NOT_EMPTY,30,255,"onkeyup=\"grado_instr.nombre.value=grado_instr.nombre.value.toUpperCase();\"");
 $f1->setHelpText('nombre','Por Favor Introduzca el Grado de Instruccion');
 $f1->submitButton('Continuar','continuar');
 $f1->borderStop();
