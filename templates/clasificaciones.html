@@ -16,6 +16,7 @@
 {section name=i loop=$clasificacion}
 <tr>
 	<td>{$clasificacion[i].nombre}</td>
+	<td>{$clasificacion[i].complemento}</td>
 	<td width="10%"><a href="?id={$clasificacion[i].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
 </tr>
 {/section}

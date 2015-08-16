@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 04:56:44
+<?php /* Smarty version 2.6.26, created on 2015-08-16 18:54:28
          compiled from clasificaciones.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Clasificacion de Personal')));
@@ -47,6 +47,8 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 ?>
 <tr>
 	<td><?php echo $this->_tpl_vars['clasificacion'][$this->_sections['i']['index']]['nombre']; ?>
+</td>
+	<td><?php echo $this->_tpl_vars['clasificacion'][$this->_sections['i']['index']]['complemento']; ?>
 </td>
 	<td width="10%"><a href="?id=<?php echo $this->_tpl_vars['clasificacion'][$this->_sections['i']['index']]['id']; ?>
 "><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
