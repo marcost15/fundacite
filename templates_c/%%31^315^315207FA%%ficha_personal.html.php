@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 04:16:14
+<?php /* Smarty version 2.6.26, created on 2015-08-16 15:06:07
          compiled from ficha_personal.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => ' Ficha Personal')));
@@ -81,6 +81,11 @@ unset($_smarty_tpl_vars);
 	<tr>
 		<th>Cargo</th>
 		<td><?php echo $this->_tpl_vars['ficha']['cargo_id']; ?>
+</td>
+	</tr>
+	<tr>
+		<th>Departamento</th>
+		<td><?php echo $this->_tpl_vars['ficha']['departamento_id']; ?>
 </td>
 	</tr>
 	<tr>

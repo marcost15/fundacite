@@ -1,9 +1,10 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 05:02:38
+<?php /* Smarty version 2.6.26, created on 2015-08-16 15:01:37
          compiled from ../menu/menu.html */ ?>
 ﻿<li><a href="#"><span>Admin BD</span></a>
 	<ul>
 		<li title="Cargos"><a href="cargos.php">Cargos</a></li>
 		<li title="Clasificacion"><a href="clasificaciones.php">Clasificaciones</a></li>
+		<li title="Departamentos"><a href="departamentos.php">Departamentos</a></li>
 		<li title="profesiones"><a href="profesiones.php">Profesiones</a></li>
 		<li title="Grado de Instruccion"><a href="grado_instruccion.php">Grado de Instruccion</a></li>
 		<li title="Niveles"><a href="niveles.php">Niveles</a></li>

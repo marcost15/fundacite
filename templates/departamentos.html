@@ -1,0 +1,31 @@
+﻿{include file="cabecera.html" title="departamentos"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+{$f1}
+</p>
+<div id="resultados">
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+<tr>
+	<th colspan="2">DEPARTAMENTOS</th>
+</tr>
+</thead>
+<tbody>
+{section name=i loop=$departamentos}
+<tr>
+	<td>{$departamentos[i].nombre}</td>
+	<td width="10%"><a href="?id={$departamentos[i].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
+</tr>
+{/section}
+</tbody>
+</table>
+</div>
+</p>
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('nombre'); f1.add( Validate.Presence );
+</script>
+{/literal}
