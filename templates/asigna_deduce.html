@@ -1,0 +1,65 @@
+﻿{include file="cabecera.html" title="Asignaciones y Deducciones de Personal"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+{$f1}
+</p>
+<div id="resultados">
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+<tr>
+	<th colspan="10">ASINACIONES Y DEDUCCIONES DEl PERSONAL</th>
+</tr>
+<tr>
+	<td><b>NOMBRE</b></td>
+	<td><b>TIPO</b></td>
+	<td><b>TIPO CALCULO</b></td>
+	<td><b>PORCENTAJE</b></td>
+	<td><b>MONTO</b></td>
+	<td><b>FORMULA</b></td>
+	<td><b>SSO</b></td>
+	<td><b>LPH</b></td>
+	<td><b>LPF</b></td>
+	<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+{section name=i loop=$asigna_deduce}
+<tr>
+	<td>{$asigna_deduce[i].nombre}</td>
+	{if $asigna_deduce[i].tipo eq 'A'}
+		<td>ASIGNACION</td>
+	{else}
+		<td>DEDUCCION</td>
+	{/if}
+	{if $asigna_deduce[i].tipo_calc eq 'M'}
+		<td>MONTO</td>
+	{else}
+		{if $asigna_deduce[i].tipo_calc eq 'P'}
+			<td>PORC</td>
+		{else}
+			<td>FORMULA</td>
+		{/if}
+	{/if}
+	<td>{$asigna_deduce[i].porc}</td>
+	<td>{$asigna_deduce[i].monto}</td>
+	<td>{$asigna_deduce[i].formula}</td>
+	<td>{$asigna_deduce[i].sso}</td>
+	<td>{$asigna_deduce[i].lph}</td>
+	<td>{$asigna_deduce[i].lpf}</td>
+	<td width="10%"><a href="?id={$asigna_deduce[i].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
+</tr>
+{/section}
+</tbody>
+</table>
+</div>
+</p>
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('nombre'); f1.add( Validate.Presence );
+	var f2 = new LiveValidation('porc'); f2.add( Validate.Numericality );
+	var f3 = new LiveValidation('monto'); f3.add( Validate.Numericality );
+</script>
+{/literal}
