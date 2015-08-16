@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Aug 10, 2015 at 08:11 AM
+-- Generation Time: Aug 16, 2015 at 02:21 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -12,6 +12,47 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- 
 -- Database: `fundacite_personal`
 -- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `asig_deducciones`
+-- 
+
+CREATE TABLE `asig_deducciones` (
+  `id` int(6) NOT NULL auto_increment,
+  `nombre` varchar(255) collate utf8_spanish_ci NOT NULL,
+  `tipo` enum('A','D') collate utf8_spanish_ci NOT NULL,
+  `tipo_calc` enum('M','P','F') collate utf8_spanish_ci NOT NULL,
+  `porc` varchar(255) collate utf8_spanish_ci NOT NULL,
+  `monto` varchar(254) collate utf8_spanish_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `asig_deducciones`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `asig_ded_formulas`
+-- 
+
+CREATE TABLE `asig_ded_formulas` (
+  `id` int(6) NOT NULL auto_increment,
+  `asig_ded_id` int(6) NOT NULL,
+  `asig_id` varchar(6) collate utf8_spanish_ci NOT NULL,
+  `operacion` varchar(255) collate utf8_spanish_ci NOT NULL,
+  `monto` varchar(255) collate utf8_spanish_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `asig_ded_formulas`
+-- 
+
 
 -- --------------------------------------------------------
 
@@ -50,6 +91,41 @@ CREATE TABLE `clasificaciones` (
 -- --------------------------------------------------------
 
 -- 
+-- Table structure for table `clasificacion_asig_deduccion`
+-- 
+
+CREATE TABLE `clasificacion_asig_deduccion` (
+  `id` int(6) NOT NULL auto_increment,
+  `clasificacion_id` int(6) NOT NULL,
+  `asig_ded_id` int(6) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `clasificacion_asig_deduccion`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `departamentos`
+-- 
+
+CREATE TABLE `departamentos` (
+  `id` int(6) NOT NULL auto_increment,
+  `nombre` varchar(255) collate utf8_spanish_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `departamentos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
 -- Table structure for table `grado_instruccion`
 -- 
 
@@ -81,6 +157,47 @@ CREATE TABLE `niveles` (
 -- 
 
 INSERT INTO `niveles` VALUES (1, 'ADMINISTRADOR');
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `pagos`
+-- 
+
+CREATE TABLE `pagos` (
+  `id` int(6) NOT NULL auto_increment,
+  `personal_id` int(6) NOT NULL,
+  `clasificacion_id` int(6) NOT NULL,
+  `quincena` enum('1ERA','2DA') collate utf8_spanish_ci NOT NULL,
+  `fecha_desde` date NOT NULL,
+  `fecha_hasta` date NOT NULL,
+  `salario` varchar(255) collate utf8_spanish_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `pagos`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for table `pagos_asig_ded`
+-- 
+
+CREATE TABLE `pagos_asig_ded` (
+  `id` int(6) NOT NULL auto_increment,
+  `pago_id` int(6) NOT NULL,
+  `asig_ded_id` int(6) NOT NULL,
+  `monto` varchar(255) collate utf8_spanish_ci NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- 
+-- Dumping data for table `pagos_asig_ded`
+-- 
+
 
 -- --------------------------------------------------------
 

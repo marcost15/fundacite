@@ -11,7 +11,7 @@ if (bd_verificar_privilegios('clasificacion.php',$_SESSION['usuario']['nivel_id'
 	ir('negacion_usuario.php');
 }
 
-$f1=new dbFormHandler('clasificacion',NULL,'onclick="highlight(event)"');
+$f1=new dbFormHandler('clasificaciones',NULL,'onclick="highlight(event)"');
 $f1->setLanguage('es');
 $f1->setConnectionResource($link,'clasificaciones','mysql');
 $f1->borderStart('Clasificacion de Empleados');
