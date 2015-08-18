@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 05:34:29
+<?php /* Smarty version 2.6.26, created on 2015-08-18 07:41:05
          compiled from niveles.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Niveles de Acceso')));

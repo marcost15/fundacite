@@ -1,0 +1,85 @@
+{include file="cabecera.html"}
+{if $pagos.neto}
+<div id = "constancia">	
+<p>
+<h3>RECIBO DE PAGO</h3>
+</p>
+</p>
+	Por medio de la presente se hace constar que la <b>{$datos.grado_instruccion_id} {$datos.nombre} {$datos.apellido}</b> , Clasificado como 
+	<b>{$datos.clasificacion_id}</b>, de Fundacite Trujillo, titular de la Cédula de Identidad:<b>{$datos.nac}-{$datos.cedula}</b>, 
+	la cual labora en el área  de <b>{$datos.departamento_id}</b>; recibió de la Fundación para el desarrollo de la Ciencia en el Estado Trujillo 
+	la cantidad de <b>Bs. {$pagos.neto}</b> correspondiente al período desde el <b>{$pagos.fecha_desde}</b> hasta el <b>{$pagos.fecha_hasta}</b>, 
+	por los siguientes conceptos:
+</p>
+
+<div id="tabla1">
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>CONCEPTOS ASIGNACIONES</th>
+		<th>MONTO</th>
+	</tr>
+</thead>
+<tbody>
+	{section name=p loop=$pagos_asig_ded}
+	<tr>
+		{if $pagos_asig_ded[p].tipo eq 'A'}
+			<td>{$pagos_asig_ded[p].asig_nombre}</td>
+			<td>{$pagos_asig_ded[p].monto}</td>
+		{/if}
+	</tr>{/section}
+</tbody>
+<thead>
+	<tr> 
+		<th>TOTAL ASIGNACIONES</th>
+		<th>{$pagos.total_asig}</th>
+	</tr>
+</thead>
+</table>
+</div>
+<div id="tabla2">
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>CONCEPTOS DEDUCCIONES</th>
+		<th>MONTO</th>
+	</tr>
+</thead>
+<tbody>
+	{section name=p loop=$pagos_asig_ded}
+	<tr>
+		{if $pagos_asig_ded[p].tipo eq 'D'}
+			<td>{$pagos_asig_ded[p].asig_nombre}</td>
+			<td>{$pagos_asig_ded[p].monto}</td>
+		{/if}
+	</tr>{/section}
+</tbody>
+<thead>
+	<tr> 
+		<th>TOTAL DEDUCCIONES</th>
+		<th>{$pagos.total_deducciones}</th>
+	</tr>
+</thead>
+</table>
+</div>
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+	<tr> 
+		<th>NETO</th>
+		<th>{$pagos.neto}</th>
+	</tr>
+</thead>
+</table>
+
+	En Trujillo, a los {$fecha}
+<p class="firma">
+		<br />
+		<center><hr width="300px" /></center>
+		<center><b>{$datos.grado_instruccion_id} {$datos.nombre} {$datos.apellido}</b></center>
+		<center> <b>C.I {$datos.nac}-{$datos.cedula}</b></center>
+</div>
+</p>
+{else}
+<h3>AUN NO SE HA GENERADO EL PERIODO DE PAGO SOLICITADO, VERIFIQUE...</h3>
+{/if}
+{include file="pie.html"}

@@ -9,14 +9,24 @@
 <table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
 <thead>
 <tr>
-	<th colspan="2">CLASIFICACION DEl PERSONAL</th>
+	<th colspan="5">CLASIFICACION DEl PERSONAL</th>
+</tr>
+<tr>
+	<th><b>NOMBRE</b></th>
+	<th><b>GRADO</b></th>
+	<th><b>COMPLEMENTO</b></th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
 {section name=i loop=$clasificacion}
 <tr>
 	<td>{$clasificacion[i].nombre}</td>
+	<td>{$clasificacion[i].grado}</td>
+	<td>{$clasificacion[i].complemento}</td>
 	<td width="10%"><a href="?id={$clasificacion[i].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
+	<td width="10%"><a href="asig_asociadas.php?id={$clasificacion[i].id}" onClick="flash('forma2','forma1')"><img onmouseover='overlib("<strong>Asignaciones y Deducciones</strong>",WIDTH, 70)' src="./imagenes/finance.png" onmouseout='return nd();'/></a></a></td>
 </tr>
 {/section}
 </tbody>

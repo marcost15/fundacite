@@ -10,6 +10,7 @@ include './modelo/bd_lista_cargos.php';
 include './modelo/bd_lista_grado_instruccion.php';
 include './modelo/bd_lista_profesiones.php';
 include './modelo/bd_lista_clasificacion.php';
+include './modelo/bd_lista_departamentos.php';
 include './modelo/bd_modificar_personal.php';
 include './modelo/bd_verificar_privilegios.php';
 if (bd_verificar_privilegios('modificar_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
@@ -64,6 +65,8 @@ $f1->selectField("Nivel de Acceso", "nivel_id",bd_lista_niveles(),FH_NOT_EMPTY,t
 $f1->setValue('nivel_id', $personal['nivel_id']);
 $f1->selectField("Cargo", "cargo_id",bd_lista_cargos(),FH_NOT_EMPTY,true);
 $f1->setValue('cargo_id', $personal['cargo_id']);
+$f1->selectField("Departamento", "departamento_id",bd_lista_departamentos(),FH_NOT_EMPTY,true);
+$f1->setValue('departamento_id', $personal['departamento_id']);
 $f1->selectField("Grado de Instruccion", "grado_instruccion_id",bd_lista_grado_instruccion(),FH_NOT_EMPTY,true);
 $f1->setValue('grado_instruccion_id', $personal['grado_instruccion_id']);
 $f1->selectField("Profesión", "profesion_id",bd_lista_profesiones(),FH_NOT_EMPTY,true);

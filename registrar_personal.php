@@ -9,6 +9,7 @@ include './modelo/bd_lista_cargos.php';
 include './modelo/bd_lista_grado_instruccion.php';
 include './modelo/bd_lista_profesiones.php';
 include './modelo/bd_lista_clasificacion.php';
+include './modelo/bd_lista_departamentos.php';
 include './modelo/bd_guardar_personal.php';
 include './modelo/bd_verificar_privilegios.php';
 if (bd_verificar_privilegios('registrar_personal.php',$_SESSION['usuario']['nivel_id'])!='CONCEDER')
@@ -47,6 +48,7 @@ $f1->textField('Correo Electronico','correo',_FH_EMAIL,30,50);
 $f1->jsDateField('Fecha de Ingreso','fecha_ing','validafecha',1,'d-m-y',"50:00");
 $f1->selectField("Nivel de Acceso", "nivel_id",bd_lista_niveles(),FH_NOT_EMPTY,true);
 $f1->selectField("Cargo", "cargo_id",bd_lista_cargos(),FH_NOT_EMPTY,true);
+$f1->selectField("Departamentos", "departamento_id",bd_lista_departamentos(),FH_NOT_EMPTY,true);
 $f1->selectField("Grado de Instruccion", "grado_instruccion_id",bd_lista_grado_instruccion(),FH_NOT_EMPTY,true);
 $f1->selectField("Profesión", "profesion_id",bd_lista_profesiones(),FH_NOT_EMPTY,true);
 $f1->selectField("Clasificación", "clasificacion_id",bd_lista_clasificacion(),FH_NOT_EMPTY,true);

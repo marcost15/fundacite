@@ -24,6 +24,7 @@ function bd_modificar_personal($d)
 				profesion_id =  '$d[salario]',
 				cargo_id     =  '$d[cargo_id]',
 				fecha_ing    =  '$d[fecha_ing]',
+				departamento_id    =  '$d[departamento_id]',
 				profesion_id =  '$d[profesion_id]',
 				clasificacion_id = '$d[clasificacion_id]',
 				grado_instruccion_id =  '$d[grado_instruccion_id]'
@@ -41,6 +42,7 @@ function bd_modificar_personal($d)
 				profesion_id =  '$d[salario]',
 				cargo_id     =  '$d[cargo_id]',
 				fecha_ing    =  '$d[fecha_ing]',
+				departamento_id    =  '$d[departamento_id]',
 				profesion_id =  '$d[profesion_id]',
 				clasificacion_id = '$d[clasificacion_id]',
 				grado_instruccion_id =  '$d[grado_instruccion_id]'

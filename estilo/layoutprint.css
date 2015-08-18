@@ -15,6 +15,7 @@
 
 #pie{
 	border: solid 2px #ffffff;
+	clear: both;
 }
 
 #titulo2{
@@ -45,6 +46,7 @@
 	border-color:#0066CC;
 	text-align: center;
 	width:100%;
+	min-height: 1050px;
 }
 #contenido_reporte{
     width: auto;

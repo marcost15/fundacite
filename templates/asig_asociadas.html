@@ -1,0 +1,74 @@
+﻿{include file="cabecera.html" title="Clasificacion de Personal"}
+{if $smarty.session.mensaje}
+</p>
+<div id="mensaje">{$smarty.session.mensaje}</div>
+{/if}
+</p>
+<div id="resultados">
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+<tr>
+	<th colspan="3">CLASIFICACION DEl PERSONAL</th>
+</tr>
+<tr>
+	<th><b>NOMBRE</b></th>
+	<th><b>GRADO</b></th>
+	<th><b>COMPLEMENTO</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>{$clasificacion.nombre}</td>
+	<td>{$clasificacion.grado}</td>
+	<td>{$clasificacion.complemento}</td>
+</tr>
+</tbody>
+</table>
+</div>
+{$f2}
+</p>
+<div id="resultados">
+<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
+<thead>
+<tr>
+	<th colspan="10">ASIGNACIONES Y DEDUCCIONES ASOCIADAS A LA CLASIFICACION</th>
+</tr>
+<tr>
+	<td><b>NOMBRE</b></td>
+	<td><b>TIPO</b></td>
+	<td><b>TIPO CALCULO</b></td>
+	<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+{section name=i loop=$datos}
+<tr>
+	<td>{$datos[i].nombre}</td>
+	{if $datos[i].tipo eq 'A'}
+		<td>ASIGNACION</td>
+	{else}
+		<td>DEDUCCION</td>
+	{/if}
+	{if $datos[i].tipo_calc eq 'M'}
+		<td>MONTO</td>
+	{else}
+		{if $datos[i].tipo_calc eq 'P'}
+			<td>PORC</td>
+		{else}
+			<td>FORMULA</td>
+		{/if}
+	{/if}
+	<td align="center"><a href="?id={$clasificacion.id}&asig_id={$datos[i].id}&func=delete"><img onclick="return confirm('¿Esta seguro?')" onmouseover='overlib("<strong>Eliminar</strong>",WIDTH, 70)' src="./imagenes/eliminar.png" onmouseout='return nd();'/></a></td>
+</tr>
+{/section}
+</tbody>
+</table>
+</div>
+
+</p>
+{include file="pie.html"}
+{literal}
+<script>
+	var f1 = new LiveValidation('nombre'); f1.add( Validate.Presence );
+</script>
+{/literal}

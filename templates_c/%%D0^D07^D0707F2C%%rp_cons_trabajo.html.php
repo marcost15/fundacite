@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-10 05:27:57
+<?php /* Smarty version 2.6.26, created on 2015-08-18 01:44:30
          compiled from rp_cons_trabajo.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
@@ -6,6 +6,7 @@ $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
 <div id = "constancia">	
+<p>
 <h2>CONSTANCIA</h2>
 </p>
 </p>
@@ -44,4 +45,4 @@ unset($_smarty_tpl_vars);
 $this->_smarty_include(array('smarty_include_tpl_file' => "pie.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
- ?>
+ ?>
