@@ -17,7 +17,6 @@ if (bd_verificar_privilegios('rp_cons_trabajo.php',$_SESSION['usuario']['nivel_i
 }
 
 $personal = bd_ficha_personal($_SESSION['usuario']['id']);
-$personal['nivel_id'] = bd_obt_niveles($personal['nivel_id']);
 $personal['cargo_id'] = bd_obt_cargos($personal['cargo_id']);
 $personal['profesion_id'] = bd_obt_profesiones($personal['profesion_id']);
 $personal['grado_instruccion_id'] = bd_obt_grado_instruccion($personal['grado_instruccion_id']);

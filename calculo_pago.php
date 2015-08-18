@@ -123,6 +123,10 @@ foreach ($personal as $i=>$c)
 	$personal[$i]['asignaciones'][$cuenta_a+1]['tipo'] = "A";	
 	$personal[$i]['asignaciones'][$cuenta_a+1]['monto'] = $complemento / 2;	
 	
+	$personal[$i]['asignaciones'][$cuenta_a+2]['nombre'] = "SUELDO";
+	$personal[$i]['asignaciones'][$cuenta_a+2]['tipo'] = "A";	
+	$personal[$i]['asignaciones'][$cuenta_a+2]['monto'] = $minimo / 2;	
+	
 	$cuenta_d = count($personal[$i]['deducciones']);
 	$personal[$i]['deducciones'][$cuenta_d+1]['nombre'] = "S.S.O";
 	$personal[$i]['deducciones'][$cuenta_d+1]['tipo'] = "D";
@@ -157,7 +161,7 @@ foreach ($personal as $i=>$c)
 		}
 		$personal[$i]['total_ded'] = number_format($total_ded,2);
 	}
-	$personal[$i]['neto'] = number_format($minimo + $total_asig - $total_ded,2);
+	$personal[$i]['neto'] = number_format($total_asig - $total_ded,2);
 	
 	$t_a = $personal[$i]['total_asig'];
 	$t_d = $personal[$i]['total_ded'];
