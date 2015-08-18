@@ -1,11 +1,11 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-18 07:31:54
+<?php /* Smarty version 2.6.26, created on 2015-08-18 07:44:37
          compiled from rp_cons_recibo.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-<?php if ($this->_tpl_vars['pagos']): ?>
+<?php if ($this->_tpl_vars['pagos']['neto']): ?>
 <div id = "constancia">	
 <p>
 <h3>RECIBO DE PAGO</h3>
@@ -14,7 +14,7 @@ unset($_smarty_tpl_vars);
 	Por medio de la presente se hace constar que la <b><?php echo $this->_tpl_vars['datos']['grado_instruccion_id']; ?>
  <?php echo $this->_tpl_vars['datos']['nombre']; ?>
  <?php echo $this->_tpl_vars['datos']['apellido']; ?>
-</b> , Clasificada como 
+</b> , Clasificado como 
 	<b><?php echo $this->_tpl_vars['datos']['clasificacion_id']; ?>
 </b>, de Fundacite Trujillo, titular de la Cédula de Identidad:<b><?php echo $this->_tpl_vars['datos']['nac']; ?>
 -<?php echo $this->_tpl_vars['datos']['cedula']; ?>

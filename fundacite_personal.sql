@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Aug 17, 2015 at 12:50 PM
+-- Generation Time: Aug 18, 2015 at 08:06 AM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -40,8 +40,8 @@ CREATE TABLE `asig_deducciones` (
 INSERT INTO `asig_deducciones` VALUES (1, 'PRIMA DE PROFESIONAL', 'A', 'P', '12', '', '', 'S', 'S', 'S');
 INSERT INTO `asig_deducciones` VALUES (2, 'PRIMA DE  RESPONSABILIDAD', 'A', 'M', '', '2000', '', 'S', 'S', 'S');
 INSERT INTO `asig_deducciones` VALUES (3, 'PRIMA JERARQUIA', 'A', 'M', '', '1600', '', 'S', 'S', 'S');
-INSERT INTO `asig_deducciones` VALUES (4, 'FONDO DE JUBILACION', 'D', 'F', '', '', '*0,03', 'N', 'N', 'N');
-INSERT INTO `asig_deducciones` VALUES (5, 'CAJA DE AHORRO', 'D', 'F', '', '', '*0,1+3', 'N', 'N', 'N');
+INSERT INTO `asig_deducciones` VALUES (4, 'FONDO DE JUBILACION', 'D', 'F', '', '', '*0.03', 'N', 'N', 'N');
+INSERT INTO `asig_deducciones` VALUES (5, 'CAJA DE AHORRO', 'D', 'F', '', '', '*0.1+3', 'N', 'N', 'N');
 
 -- --------------------------------------------------------
 
@@ -158,13 +158,14 @@ CREATE TABLE `niveles` (
   `id` int(6) NOT NULL auto_increment,
   `nombre` varchar(255) collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='niveles de usuario o administrador' AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='niveles de usuario o administrador' AUTO_INCREMENT=3 ;
 
 -- 
 -- Dumping data for table `niveles`
 -- 
 
 INSERT INTO `niveles` VALUES (1, 'ADMINISTRADOR');
+INSERT INTO `niveles` VALUES (2, 'USUARIO');
 
 -- --------------------------------------------------------
 
@@ -235,7 +236,7 @@ CREATE TABLE `personal` (
 -- 
 
 INSERT INTO `personal` VALUES (1, 'V', 1, 'admin', 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'ACTIVO');
-INSERT INTO `personal` VALUES (2, 'V', 17604411, 'MARCOS', 'TORREALBA', 'marcos', '33a55ce3bd6606437c71a69a15cee2c6', 1, 'ACTIVO');
+INSERT INTO `personal` VALUES (2, 'V', 17604411, 'MARCOS', 'TORREALBA', 'marcos', '33a55ce3bd6606437c71a69a15cee2c6', 2, 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -279,7 +280,7 @@ CREATE TABLE `privilegios` (
   `nivel_id` int(6) NOT NULL,
   `acceso` enum('CONCEDER','DENEGAR') collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=28 ;
 
 -- 
 -- Dumping data for table `privilegios`
@@ -306,6 +307,12 @@ INSERT INTO `privilegios` VALUES (18, 'asigna_deduce.php', 1, 'CONCEDER');
 INSERT INTO `privilegios` VALUES (19, 'asig_asociadas.php', 1, 'CONCEDER');
 INSERT INTO `privilegios` VALUES (20, 'pagos.php', 1, 'CONCEDER');
 INSERT INTO `privilegios` VALUES (21, 'calculo_pago.php', 1, 'CONCEDER');
+INSERT INTO `privilegios` VALUES (22, 'rp_cons_recibo.php', 1, 'CONCEDER');
+INSERT INTO `privilegios` VALUES (23, 'rp_frm_recibo.php', 1, 'CONCEDER');
+INSERT INTO `privilegios` VALUES (24, 'cambiar_clave.php', 2, 'CONCEDER');
+INSERT INTO `privilegios` VALUES (25, 'rp_cons_recibo.php', 2, 'CONCEDER');
+INSERT INTO `privilegios` VALUES (26, 'rp_cons_trabajo.php', 2, 'CONCEDER');
+INSERT INTO `privilegios` VALUES (27, 'rp_frm_recibo.php', 2, 'CONCEDER');
 
 -- --------------------------------------------------------
 

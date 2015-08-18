@@ -1,6 +1,7 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-18 01:42:30
+<?php /* Smarty version 2.6.26, created on 2015-08-18 07:40:25
          compiled from ../menu/menu.html */ ?>
-﻿<li><a href="#"><span>Admin BD</span></a>
+﻿<?php if ($_SESSION['usuario']['nivel_id'] == '1'): ?>
+<li><a href="#"><span>Admin BD</span></a>
 	<ul>
 		<li title="Asignaciones y Deducciones"><a href="asigna_deduce.php">Asignaciones y Deducciones</a></li>
 		<li title="Cargos"><a href="cargos.php">Cargos</a></li>
@@ -20,6 +21,7 @@
 		<li title="Cambiar Clave"><a href="cambiar_clave.php">Cambiar Clave</a></li> 
 	</ul>
 </li>
+<?php endif; ?>
 <li><a href="#"><span>Reportes</span></a>
 	<ul>
 		<li><a href="rp_cons_trabajo.php">Constancia de Trabajo</a></li>
