@@ -26,7 +26,7 @@
 	<td>{$clasificacion[i].grado}</td>
 	<td>{$clasificacion[i].complemento}</td>
 	<td width="10%"><a href="?id={$clasificacion[i].id}"><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
-	<td width="10%"><a href="asig_asociadas?id={$clasificacion[i].id}" onClick="flash('forma2','forma1')"><img onmouseover='overlib("<strong>Asignaciones y Deducciones</strong>",WIDTH, 70)' src="./imagenes/finance.png" onmouseout='return nd();'/></a></a></td>
+	<td width="10%"><a href="asig_asociadas.php?id={$clasificacion[i].id}" onClick="flash('forma2','forma1')"><img onmouseover='overlib("<strong>Asignaciones y Deducciones</strong>",WIDTH, 70)' src="./imagenes/finance.png" onmouseout='return nd();'/></a></a></td>
 </tr>
 {/section}
 </tbody>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-16 21:26:11
+<?php /* Smarty version 2.6.26, created on 2015-08-18 03:41:40
          compiled from clasificaciones.html */ ?>
 ﻿<?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array('title' => 'Clasificacion de Personal')));
@@ -61,7 +61,7 @@ $this->_sections['i']['last']       = ($this->_sections['i']['iteration'] == $th
 </td>
 	<td width="10%"><a href="?id=<?php echo $this->_tpl_vars['clasificacion'][$this->_sections['i']['index']]['id']; ?>
 "><img onmouseover='overlib("<strong>Modificar</strong>",WIDTH, 70)' src="./imagenes/boton1.png" onmouseout='return nd();'/></a></a></td>
-	<td width="10%"><a href="asig_asociadas?id=<?php echo $this->_tpl_vars['clasificacion'][$this->_sections['i']['index']]['id']; ?>
+	<td width="10%"><a href="asig_asociadas.php?id=<?php echo $this->_tpl_vars['clasificacion'][$this->_sections['i']['index']]['id']; ?>
 " onClick="flash('forma2','forma1')"><img onmouseover='overlib("<strong>Asignaciones y Deducciones</strong>",WIDTH, 70)' src="./imagenes/finance.png" onmouseout='return nd();'/></a></a></td>
 </tr>
 <?php endfor; endif; ?>

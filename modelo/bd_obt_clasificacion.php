@@ -7,6 +7,6 @@ function bd_obt_clasificacion($id = null)
 	}
 	else
 	{
-		return sql2value("SELECT nombre FROM clasificaciones WHERE id = $id");
+		return sql2value("SELECT CONCAT( nombre, ', Grado ', grado ) AS nombre FROM clasificaciones WHERE id = $id");
 	}
 }

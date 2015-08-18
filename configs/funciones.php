@@ -70,6 +70,26 @@ function fecha_larga($fecha){
    return $f[2].' de '.$meses[$f[1]].' de '.$f[0];
 }
 
+//funcion para contar un dia especifico en el mes ejemplo cuantos lunes hay en un mes
+function calculo_dia_especifico($year,$month,$calday){ //0 Sunday, 1 Monday, 2 Tue , 3 Wed , 4. Thu , 5. Fri , 6. Sat
+    // calculate total number of occurance in this month
+    $num = cal_days_in_month(CAL_GREGORIAN, $month, $year); // days in month
+    $dayofweek = date( "w", mktime(0, 0, 0, $month, 1, $year));     
+    $adddays=0;
+    if($calday > $dayofweek ) 
+            $adddays=1 + $calday - $dayofweek;
+    else if($calday < $dayofweek ) 
+            $adddays=1 + 7 + ($calday - $dayofweek );
+                
+    $remainingdays=$num-$adddays;
+    $leavesnum=1+intval($remainingdays / 7);
+    return     $leavesnum;
+}
+
+function getUltimoDiaMes($elAnio,$elMes) {
+  return date("d",(mktime(0,0,0,$elMes+1,1,$elAnio)-1));
+}
+
 function validafecha($fecha)//Cambio en la validacion por marcos
 {
 	if ($fecha == NULL)

@@ -24,7 +24,8 @@ $personal['grado_instruccion_id'] = bd_obt_grado_instruccion($personal['grado_in
 $personal['fecha_ing'] = f2f("$personal[fecha_ing]");
 $personal['clasificacion_id'] = bd_obt_clasificacion($personal['clasificacion_id']);
 
-$fecha = date('d-m-Y');
+$fecha = date('Y-m-d');
+$fecha = fecha_larga($fecha);
 $smarty->assign('datos',$personal);
 $smarty->assign('fecha',$fecha);
 $smarty->disp();

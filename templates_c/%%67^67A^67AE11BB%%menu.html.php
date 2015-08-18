@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-16 15:47:30
+<?php /* Smarty version 2.6.26, created on 2015-08-18 01:42:30
          compiled from ../menu/menu.html */ ?>
 ﻿<li><a href="#"><span>Admin BD</span></a>
 	<ul>
@@ -12,6 +12,7 @@
 		<li title="Privilegios"><a href="privilegios.php">Privilegios</a></li>
 	</ul>
 </li>
+<li><a href="pagos.php">Pagos</a></li>
 <li><a href="#"><span>Personal</span></a>
 	<ul>
 		<li title="Agregar Usuarios"><a href="registrar_personal.php">Agregar</a></li>
@@ -22,6 +23,7 @@
 <li><a href="#"><span>Reportes</span></a>
 	<ul>
 		<li><a href="rp_cons_trabajo.php">Constancia de Trabajo</a></li>
+		<li><a href="rp_frm_recibo.php">Recibos de Pagos</a></li>
 	</ul>
 </li>
 <li class="topfirst"><a href="index.php">Salir</a></li>
