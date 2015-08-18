@@ -36,9 +36,20 @@ function calculo($formula){
     eval("\$resp = $formula;");
     return $resp;
 }
-
 $fecha_desde = f2f($fecha_desde);
 $fecha_hasta = f2f($fecha_hasta);
+
+$pagos_rev = sql2array("SELECT id FROM pagos WHERE fecha_desde = '$fecha_desde' AND fecha_hasta = '$fecha_hasta' AND quincena = '$quincena'");
+	if (!empty($pagos_rev))
+	{
+		foreach ($pagos_rev as $x=>$z)
+		{
+			$borrar = $pagos_rev[$x]['id'];
+			enviar_sql("DELETE FROM pagos WHERE id = '$borrar'");
+			enviar_sql("DELETE FROM pagos_asig_ded WHERE pago_id = '$borrar'");
+		}
+	}
+	
 $personal = sql2array("SELECT id, salario, clasificacion_id FROM personal, personal_datos WHERE personal_id = id");
 foreach ($personal as $i=>$c)
 {

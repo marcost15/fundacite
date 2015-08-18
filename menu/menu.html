@@ -1,4 +1,5 @@
-﻿<li><a href="#"><span>Admin BD</span></a>
+﻿{if $smarty.session.usuario.nivel_id eq '1'}
+<li><a href="#"><span>Admin BD</span></a>
 	<ul>
 		<li title="Asignaciones y Deducciones"><a href="asigna_deduce.php">Asignaciones y Deducciones</a></li>
 		<li title="Cargos"><a href="cargos.php">Cargos</a></li>
@@ -18,6 +19,7 @@
 		<li title="Cambiar Clave"><a href="cambiar_clave.php">Cambiar Clave</a></li> 
 	</ul>
 </li>
+{/if}
 <li><a href="#"><span>Reportes</span></a>
 	<ul>
 		<li><a href="rp_cons_trabajo.php">Constancia de Trabajo</a></li>
