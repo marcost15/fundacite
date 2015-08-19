@@ -17,59 +17,39 @@
 <thead>
 	<tr> 
 		<th>CONCEPTOS ASIGNACIONES</th>
-		<th>MONTO</th>
+		<th>ASIGNACIONES</th>
+		<th>DEDUCCIONES</th>
 	</tr>
 </thead>
 <tbody>
 	{section name=p loop=$pagos_asig_ded}
 	<tr>
+			<td>{$pagos_asig_ded[p].asig_nombre}</td>
 		{if $pagos_asig_ded[p].tipo eq 'A'}
-			<td>{$pagos_asig_ded[p].asig_nombre}</td>
 			<td>{$pagos_asig_ded[p].monto}</td>
+		{else}
+			<td>&nbsp;</td>
 		{/if}
-	</tr>{/section}
-</tbody>
-<thead>
-	<tr> 
-		<th>TOTAL ASIGNACIONES</th>
-		<th>{$pagos.total_asig}</th>
-	</tr>
-</thead>
-</table>
-</div>
-<div id="tabla2">
-<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
-<thead>
-	<tr> 
-		<th>CONCEPTOS DEDUCCIONES</th>
-		<th>MONTO</th>
-	</tr>
-</thead>
-<tbody>
-	{section name=p loop=$pagos_asig_ded}
-	<tr>
 		{if $pagos_asig_ded[p].tipo eq 'D'}
-			<td>{$pagos_asig_ded[p].asig_nombre}</td>
 			<td>{$pagos_asig_ded[p].monto}</td>
+		{else}
+			<td>&nbsp;</td>
 		{/if}
 	</tr>{/section}
 </tbody>
 <thead>
 	<tr> 
-		<th>TOTAL DEDUCCIONES</th>
+		<th>TOTAL</th>
+		<th>{$pagos.total_asig}</th>
 		<th>{$pagos.total_deducciones}</th>
 	</tr>
-</thead>
-</table>
-</div>
-<table class="enhancedtable" border="0" cellspacing="3" cellpadding="3" width="100%">
-<thead>
 	<tr> 
 		<th>NETO</th>
-		<th>{$pagos.neto}</th>
+		<th colspan="2">{$pagos.neto}</th>
 	</tr>
 </thead>
 </table>
+</div>
 
 	En Trujillo, a los {$fecha}
 <p class="firma">
