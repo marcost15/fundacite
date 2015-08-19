@@ -52,7 +52,8 @@ $f1->selectField("Departamentos", "departamento_id",bd_lista_departamentos(),FH_
 $f1->selectField("Grado de Instruccion", "grado_instruccion_id",bd_lista_grado_instruccion(),FH_NOT_EMPTY,true);
 $f1->selectField("Profesión", "profesion_id",bd_lista_profesiones(),FH_NOT_EMPTY,true);
 $f1->selectField("Clasificación", "clasificacion_id",bd_lista_clasificacion(),FH_NOT_EMPTY,true);
-$f1->textField('Salario','salario',FH_DIGIT,30,30,"onkeyup=\"return ValNumero(this);\"");
+$f1->textField('Salario Minimo','salario',FH_FLOAT,30,30);
+$f1->textField('Salario Normal','salario2',FH_FLOAT,30,30);
 $f1->uploadField('Foto', 'foto', $foto);
 $f1->setMask(
    " <tr>\n".

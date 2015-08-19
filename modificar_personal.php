@@ -73,8 +73,10 @@ $f1->selectField("Profesión", "profesion_id",bd_lista_profesiones(),FH_NOT_EMPT
 $f1->setValue('profesion_id', $personal['profesion_id']);
 $f1->selectField("Clasificacion", "clasificacion_id",bd_lista_clasificacion(),FH_NOT_EMPTY,true);
 $f1->setValue('clasificacion_id', $personal['clasificacion_id']);
-$f1->textField('Salario','salario',FH_DIGIT,30,30,"onkeyup=\"return ValNumero(this);\"");
+$f1->textField('Salario Minimo','salario',FH_FLOAT,30,30);
 $f1->setValue('salario', $personal['salario']);
+$f1->textField('Salario Normal','salario2',FH_FLOAT,30,30);
+$f1->setValue('salario2', $personal['salario2']);
 $f1->uploadField('Foto', 'foto', $foto);
 $f1->setValue('foto', $personal['foto']);
 $f1->selectField("Estado", "estado",$estado,FH_NOT_EMPTY,true);
