@@ -161,6 +161,7 @@ foreach ($personal as $i=>$c)
 		{
 			$total_asig = $total_asig + $personal[$i]['asignaciones'][$t]['monto'];
 		}
+		$personal[$i]['total_asig'] = $personal[$i]['total_asig'] + $minimo + $complemento;
 		$personal[$i]['total_asig'] = number_format($total_asig,2);
 	}
 	$total_ded = 0;
