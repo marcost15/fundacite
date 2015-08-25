@@ -17,7 +17,6 @@ $f1->setConnectionResource($link,'clasificaciones','mysql');
 $f1->borderStart('Clasificacion de Empleados');
 $f1->textField('Nombre de la clasificación','nombre',FH_NOT_EMPTY,30,255,"onkeyup=\"clasificaciones.nombre.value=clasificaciones.nombre.value.toUpperCase();\"");
 $f1->setHelpText('nombre','Por Favor Introduzca el nombre de la clasificación');
-$f1->textField('Grado','grado',_FH_DIGIT,5,10, "onkeyup=\"return ValNumero(this);\"");
 $f1->textField('Complemento','complemento',_FH_FLOAT,10,10);
 $f1->setHelpText('complemento','Por Favor Introduzca los decimales del complemento con punto');
 $f1->submitButton('Continuar','continuar');

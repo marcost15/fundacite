@@ -78,6 +78,8 @@ function procesar($d)
 		if ($n==0)
 		{
 			$d['fecha_ing'] = f2f($d['fecha_ing']);
+			$d['salario'] = str_replace(',','.',"$d[salario]");
+			$d['salario2'] = str_replace(',','.',"$d[salario2]");
 			bd_guardar_personal($d);
 			$_SESSION['mensaje']="PERSONAL REGISTRADO CORRECTAMENTE";	
 			ir('registrar_personal.php');;
