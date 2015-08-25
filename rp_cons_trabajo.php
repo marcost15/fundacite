@@ -22,7 +22,7 @@ $personal['profesion_id'] = bd_obt_profesiones($personal['profesion_id']);
 $personal['grado_instruccion_id'] = bd_obt_grado_instruccion($personal['grado_instruccion_id']);
 $personal['fecha_ing'] = f2f("$personal[fecha_ing]");
 $personal['clasificacion_id'] = bd_obt_clasificacion($personal['clasificacion_id']);
-
+$personal['salario'] = str_replace('.',',',"$personal[salario]");
 $fecha = date('Y-m-d');
 $fecha = fecha_larga($fecha);
 $smarty->assign('datos',$personal);

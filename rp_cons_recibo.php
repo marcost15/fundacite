@@ -50,7 +50,18 @@ $pagos['fecha_hasta'] = f2f($pagos['fecha_hasta']);
 $pagos_asig_ded = sql2array("SELECT id,pago_id,asig_nombre,tipo,monto FROM pagos_asig_ded WHERE pago_id = '$pago_id'");
 $fecha = date('Y-m-d');
 $fecha = fecha_larga($fecha);
+$pagos['quincena'] = str_replace('.',',',"$pagos[quincena]");
+$pagos['salario'] = str_replace('.',',',"$pagos[salario]");
+$pagos['total_asig'] = str_replace('.',',',"$pagos[total_asig]");
+$pagos['total_deducciones'] = str_replace('.',',',"$pagos[total_deducciones]");
+$pagos['neto'] = str_replace('.',',',"$pagos[neto]");
 
+foreach ($pagos_asig_ded as $y=>$t)
+{
+	$monto = $pagos_asig_ded[$y]['monto'];
+	$pagos_asig_ded[$y]['monto'] = str_replace('.',',',"$monto");
+}
+				
 $smarty->assign('datos',$personal);
 $smarty->assign('fecha',$fecha);
 $smarty->assign('pagos',$pagos);
