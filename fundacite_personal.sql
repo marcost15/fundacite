@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: Aug 18, 2015 at 08:06 AM
+-- Generation Time: Aug 19, 2015 at 07:59 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.6
 
@@ -39,7 +39,7 @@ CREATE TABLE `asig_deducciones` (
 
 INSERT INTO `asig_deducciones` VALUES (1, 'PRIMA DE PROFESIONAL', 'A', 'P', '12', '', '', 'S', 'S', 'S');
 INSERT INTO `asig_deducciones` VALUES (2, 'PRIMA DE  RESPONSABILIDAD', 'A', 'M', '', '2000', '', 'S', 'S', 'S');
-INSERT INTO `asig_deducciones` VALUES (3, 'PRIMA JERARQUIA', 'A', 'M', '', '1600', '', 'S', 'S', 'S');
+INSERT INTO `asig_deducciones` VALUES (3, 'PRIMA JERARQUIA', 'A', 'M', '', '1600.80', '', 'S', 'S', 'S');
 INSERT INTO `asig_deducciones` VALUES (4, 'FONDO DE JUBILACION', 'D', 'F', '', '', '*0.03', 'N', 'N', 'N');
 INSERT INTO `asig_deducciones` VALUES (5, 'CAJA DE AHORRO', 'D', 'F', '', '', '*0.1+3', 'N', 'N', 'N');
 
@@ -82,7 +82,7 @@ CREATE TABLE `clasificaciones` (
 
 INSERT INTO `clasificaciones` VALUES (1, 'BACHILLER I', '1', '0');
 INSERT INTO `clasificaciones` VALUES (2, 'BACHILLER II', '1', '160');
-INSERT INTO `clasificaciones` VALUES (3, 'BACHILLER III', '1', '291');
+INSERT INTO `clasificaciones` VALUES (3, 'BACHILLER III', '1', '399.80');
 
 -- --------------------------------------------------------
 
@@ -185,12 +185,16 @@ CREATE TABLE `pagos` (
   `total_deducciones` varchar(255) collate utf8_spanish_ci NOT NULL,
   `neto` varchar(255) collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=7 ;
 
 -- 
 -- Dumping data for table `pagos`
 -- 
 
+INSERT INTO `pagos` VALUES (4, 2, 3, '1ERA', '2015-08-01', '2015-08-15', '6600', '4,643.35', '779.89', '3,863.46');
+INSERT INTO `pagos` VALUES (3, 1, 1, '1ERA', '2015-08-01', '2015-08-15', '1', '0.50', '0.03', '0.47');
+INSERT INTO `pagos` VALUES (5, 1, 1, '2DA', '2015-08-16', '2015-08-31', '1', '0.50', '0.03', '0.47');
+INSERT INTO `pagos` VALUES (6, 2, 3, '2DA', '2015-08-16', '2015-08-31', '1000.99', '1,561.86', '225.13', '1,336.73');
 
 -- --------------------------------------------------------
 
@@ -205,12 +209,42 @@ CREATE TABLE `pagos_asig_ded` (
   `tipo` enum('A','D') collate utf8_spanish_ci NOT NULL,
   `monto` varchar(255) collate utf8_spanish_ci NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=46 ;
 
 -- 
 -- Dumping data for table `pagos_asig_ded`
 -- 
 
+INSERT INTO `pagos_asig_ded` VALUES (24, 4, 'COMPLEMENTO DE SUELDO Y SALARIO', 'A', '145.95');
+INSERT INTO `pagos_asig_ded` VALUES (23, 4, 'PRIMA JERARQUIA', 'A', '800.40');
+INSERT INTO `pagos_asig_ded` VALUES (22, 4, 'PRIMA DE  RESPONSABILIDAD', 'A', '1,000.00');
+INSERT INTO `pagos_asig_ded` VALUES (21, 4, 'PRIMA DE PROFESIONAL', 'A', '396.00');
+INSERT INTO `pagos_asig_ded` VALUES (20, 3, 'LPF', 'D', '0.00');
+INSERT INTO `pagos_asig_ded` VALUES (19, 3, 'LPH', 'D', '0.01');
+INSERT INTO `pagos_asig_ded` VALUES (18, 3, 'S.S.O', 'D', '0.02');
+INSERT INTO `pagos_asig_ded` VALUES (17, 3, 'SUELDO', 'A', '0.5');
+INSERT INTO `pagos_asig_ded` VALUES (16, 3, 'COMPLEMENTO DE SUELDO Y SALARIO', 'A', '0');
+INSERT INTO `pagos_asig_ded` VALUES (25, 4, 'SUELDO', 'A', '3300');
+INSERT INTO `pagos_asig_ded` VALUES (26, 4, 'FONDO DE JUBILACION', 'D', '99.00');
+INSERT INTO `pagos_asig_ded` VALUES (27, 4, 'CAJA DE AHORRO', 'D', '331.50');
+INSERT INTO `pagos_asig_ded` VALUES (28, 4, 'S.S.O', 'D', '260.42');
+INSERT INTO `pagos_asig_ded` VALUES (29, 4, 'LPH', 'D', '56.42');
+INSERT INTO `pagos_asig_ded` VALUES (30, 4, 'LPF', 'D', '32.55');
+INSERT INTO `pagos_asig_ded` VALUES (31, 5, 'COMPLEMENTO DE SUELDO Y SALARIO', 'A', '0');
+INSERT INTO `pagos_asig_ded` VALUES (32, 5, 'SUELDO', 'A', '0.5');
+INSERT INTO `pagos_asig_ded` VALUES (33, 5, 'S.S.O', 'D', '0.02');
+INSERT INTO `pagos_asig_ded` VALUES (34, 5, 'LPH', 'D', '0.01');
+INSERT INTO `pagos_asig_ded` VALUES (35, 5, 'LPF', 'D', '0.00');
+INSERT INTO `pagos_asig_ded` VALUES (36, 6, 'PRIMA DE PROFESIONAL', 'A', '60.06');
+INSERT INTO `pagos_asig_ded` VALUES (37, 6, 'PRIMA DE  RESPONSABILIDAD', 'A', '1,000.00');
+INSERT INTO `pagos_asig_ded` VALUES (38, 6, 'PRIMA JERARQUIA', 'A', '800.40');
+INSERT INTO `pagos_asig_ded` VALUES (39, 6, 'COMPLEMENTO DE SUELDO Y SALARIO', 'A', '199.9');
+INSERT INTO `pagos_asig_ded` VALUES (40, 6, 'SUELDO', 'A', '500.495');
+INSERT INTO `pagos_asig_ded` VALUES (41, 6, 'FONDO DE JUBILACION', 'D', '15.01');
+INSERT INTO `pagos_asig_ded` VALUES (42, 6, 'CAJA DE AHORRO', 'D', '51.55');
+INSERT INTO `pagos_asig_ded` VALUES (43, 6, 'S.S.O', 'D', '118.19');
+INSERT INTO `pagos_asig_ded` VALUES (44, 6, 'LPH', 'D', '25.61');
+INSERT INTO `pagos_asig_ded` VALUES (45, 6, 'LPF', 'D', '14.77');
 
 -- --------------------------------------------------------
 
@@ -255,6 +289,7 @@ CREATE TABLE `personal_datos` (
   `cargo_id` int(10) NOT NULL,
   `departamento_id` int(6) NOT NULL,
   `salario` varchar(255) collate utf8_spanish_ci NOT NULL,
+  `salario2` varchar(255) collate utf8_spanish_ci NOT NULL,
   `profesion_id` int(6) NOT NULL,
   `grado_instruccion_id` int(6) NOT NULL,
   `clasificacion_id` int(6) NOT NULL,
@@ -265,8 +300,8 @@ CREATE TABLE `personal_datos` (
 -- Dumping data for table `personal_datos`
 -- 
 
-INSERT INTO `personal_datos` VALUES (1, 'admin', NULL, NULL, NULL, '2015-08-10', NULL, 1, 0, '1', 1, 1, 1);
-INSERT INTO `personal_datos` VALUES (2, 'CARVAJAL', '22222222', '3333333333', 'aaaa@aaa.aaa', '2015-08-16', '', 1, 1, '6600', 1, 1, 3);
+INSERT INTO `personal_datos` VALUES (1, 'admin', NULL, NULL, NULL, '2015-08-10', NULL, 1, 0, '1', '', 1, 1, 1);
+INSERT INTO `personal_datos` VALUES (2, 'CARVAJAL', '22222222', '3333333333', 'aaaa@aaa.aaa', '2015-08-16', '', 1, 1, '1000.99', '8000', 1, 1, 3);
 
 -- --------------------------------------------------------
 

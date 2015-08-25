@@ -102,7 +102,7 @@ foreach ($personal as $i=>$c)
 			{
 				$personal[$i]['monto_lpf'] = $personal[$i]['monto_lpf'] + $personal[$i]['asignaciones'][$con_ind_a]['monto'];
 			}
-			$personal[$i]['asignaciones'][$con_ind_a]['monto'] = number_format($personal[$i]['asignaciones'][$con_ind_a]['monto'] / 2,2);
+			$personal[$i]['asignaciones'][$con_ind_a]['monto'] = number_format($personal[$i]['asignaciones'][$con_ind_a]['monto'] / 2,2,'.', '');
 		}
 		else
 		{
@@ -126,7 +126,7 @@ foreach ($personal as $i=>$c)
 					$personal[$i]['deducciones'][$con_ind_d]['monto'] = calculo($calculo);
 				}
 			}
-			$personal[$i]['deducciones'][$con_ind_d]['monto'] = number_format($personal[$i]['deducciones'][$con_ind_d]['monto'] / 2,2);
+			$personal[$i]['deducciones'][$con_ind_d]['monto'] = number_format($personal[$i]['deducciones'][$con_ind_d]['monto'] / 2,2,'.', '');
 		}
 	}
 	$cuenta_a = count($personal[$i]['asignaciones']);
@@ -142,17 +142,17 @@ foreach ($personal as $i=>$c)
 	$personal[$i]['deducciones'][$cuenta_d+1]['nombre'] = "S.S.O";
 	$personal[$i]['deducciones'][$cuenta_d+1]['tipo'] = "D";
 	$personal[$i]['deducciones'][$cuenta_d+1]['monto'] = ($minimo + $personal[$i]['monto_sso'] + $complemento) * 12 / 52 * $dias_lunes * 4 / 100;
-	$personal[$i]['deducciones'][$cuenta_d+1]['monto'] = number_format($personal[$i]['deducciones'][$cuenta_d+1]['monto'] / 2, 2); 
+	$personal[$i]['deducciones'][$cuenta_d+1]['monto'] = number_format($personal[$i]['deducciones'][$cuenta_d+1]['monto'] / 2, 2,'.', ''); 
 	
 	$personal[$i]['deducciones'][$cuenta_d+2]['nombre'] = "LPH";
 	$personal[$i]['deducciones'][$cuenta_d+2]['tipo'] = "D";
 	$personal[$i]['deducciones'][$cuenta_d+2]['monto'] = ($minimo + $personal[$i]['monto_lph'] + $complemento) * 1 / 100;
-	$personal[$i]['deducciones'][$cuenta_d+2]['monto'] = number_format($personal[$i]['deducciones'][$cuenta_d+2]['monto'] / 2,2);
+	$personal[$i]['deducciones'][$cuenta_d+2]['monto'] = number_format($personal[$i]['deducciones'][$cuenta_d+2]['monto'] / 2,2,'.', '');
 	
 	$personal[$i]['deducciones'][$cuenta_d+3]['nombre'] = "LPF";
 	$personal[$i]['deducciones'][$cuenta_d+3]['tipo'] = "D";
 	$personal[$i]['deducciones'][$cuenta_d+3]['monto'] = ($minimo + $personal[$i]['monto_lpf'] + $complemento) * 12 / 52 * $dias_lunes * 0.5 / 100;
-	$personal[$i]['deducciones'][$cuenta_d+3]['monto'] = number_format($personal[$i]['deducciones'][$cuenta_d+3]['monto'] / 2,2);
+	$personal[$i]['deducciones'][$cuenta_d+3]['monto'] = number_format($personal[$i]['deducciones'][$cuenta_d+3]['monto'] / 2,2,'.', '');
 	
 	$total_asig = 0;
 	if (isset($personal[$i]['asignaciones']))
@@ -162,7 +162,7 @@ foreach ($personal as $i=>$c)
 			$total_asig = $total_asig + $personal[$i]['asignaciones'][$t]['monto'];
 		}
 		$personal[$i]['total_asig'] = $personal[$i]['total_asig'] + $minimo + $complemento;
-		$personal[$i]['total_asig'] = number_format($total_asig,2);
+		$personal[$i]['total_asig'] = number_format($total_asig,2,'.', '');
 	}
 	$total_ded = 0;
 	if (isset($personal[$i]['deducciones']))
@@ -171,9 +171,9 @@ foreach ($personal as $i=>$c)
 		{
 			$total_ded = $total_ded + $personal[$i]['deducciones'][$u]['monto'];
 		}
-		$personal[$i]['total_ded'] = number_format($total_ded,2);
+		$personal[$i]['total_ded'] = number_format($total_ded,2,'.', '');
 	}
-	$personal[$i]['neto'] = number_format($total_asig - $total_ded,2);
+	$personal[$i]['neto'] = number_format($total_asig - $total_ded,2,'.', '');
 	
 	$t_a = $personal[$i]['total_asig'];
 	$t_d = $personal[$i]['total_ded'];
