@@ -25,5 +25,8 @@ $personal['grado_instruccion_id'] = bd_obt_profesiones($personal['grado_instrucc
 $personal['clasificacion_id'] = bd_obt_clasificacion($personal['clasificacion_id']);
 $personal['departamento_id'] = bd_obt_departamentos($personal['departamento_id']);
 $personal['fecha_ing'] = f2f("$personal[fecha_ing]");
+$personal['salario'] = str_replace('.',',',"$personal[salario]");
+$personal['salario2'] = str_replace('.',',',"$personal[salario2]");
+		
 $smarty->assign('ficha',$personal);
 $smarty->disp();

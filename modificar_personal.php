@@ -96,6 +96,8 @@ $f1->onCorrect("procesar");
 function procesar($d)
 {
 		$d['fecha_ing'] = f2f("$d[fecha_ing]");
+		$d['salario'] = str_replace(',','.',"$d[salario]");
+		$d['salario2'] = str_replace(',','.',"$d[salario2]");
 		bd_modificar_personal($d);
 		?>
 				<script type="text/javascript">
