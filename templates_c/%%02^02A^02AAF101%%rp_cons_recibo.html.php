@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-19 19:37:45
+<?php /* Smarty version 2.6.26, created on 2015-09-03 16:00:09
          compiled from rp_cons_recibo.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
@@ -95,17 +95,18 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 </thead>
 </table>
 </div>
+<p>
+En Trujillo, <?php echo $this->_tpl_vars['fecha']; ?>
 
-	En Trujillo, a los <?php echo $this->_tpl_vars['fecha']; ?>
-
+</p>
 <p class="firma">
 		<br />
-		<center><hr width="300px" /></center>
+		<center><hr id="linea" width="300px" /></center>
 		<center><b><?php echo $this->_tpl_vars['datos']['grado_instruccion_id']; ?>
  <?php echo $this->_tpl_vars['datos']['nombre']; ?>
  <?php echo $this->_tpl_vars['datos']['apellido']; ?>
 </b></center>
-		<center> <b>C.I <?php echo $this->_tpl_vars['datos']['nac']; ?>
+		<center> <b>C.I. <?php echo $this->_tpl_vars['datos']['nac']; ?>
 -<?php echo $this->_tpl_vars['datos']['cedula']; ?>
 </b></center>
 </div>
@@ -113,8 +114,9 @@ $this->_sections['p']['last']       = ($this->_sections['p']['iteration'] == $th
 <?php else: ?>
 <h3>AUN NO SE HA GENERADO EL PERIODO DE PAGO SOLICITADO, VERIFIQUE...</h3>
 <?php endif; ?>
+<input id="boton_imprimir" type="button" name="imprimir" value="Imprimir" onclick="window.print();">
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "pie.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
- ?>
+ ?>

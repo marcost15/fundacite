@@ -47,7 +47,7 @@ $pagos = sql2row("SELECT id,personal_id,clasificacion_id,quincena,fecha_desde,fe
 $pago_id = $pagos['id'];
 $pagos['fecha_desde'] = f2f($pagos['fecha_desde']);
 $pagos['fecha_hasta'] = f2f($pagos['fecha_hasta']);
-$pagos_asig_ded = sql2array("SELECT id,pago_id,asig_nombre,tipo,monto FROM pagos_asig_ded WHERE pago_id = '$pago_id'");
+$pagos_asig_ded = sql2array("SELECT id,pago_id,asig_nombre,tipo,monto FROM pagos_asig_ded WHERE pago_id = '$pago_id' ORDER BY tipo");
 $fecha = date('Y-m-d');
 $fecha = fecha_larga($fecha);
 $pagos['quincena'] = str_replace('.',',',"$pagos[quincena]");

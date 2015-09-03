@@ -1,5 +1,5 @@
 @media print{
-#titulo, #divmenu, #indice, #boton {
+#titulo, #divmenu, #indice, #boton, #boton_imprimir {
 	display:none;
 }
 
@@ -14,8 +14,10 @@
 }
 
 #pie{
+	padding-top:4cm;
 	border: solid 2px #ffffff;
 	clear: both;
+	font-size:13pt;
 }
 
 #titulo2{
@@ -63,4 +65,17 @@
 	text-align: center;
 	display:inline;
 }
+
+body{
+	font-size:15pt;
+}
+
+#linea{
+	margin-top:4cm;
+}
+
+#trujillo{
+	margin:4cm;
+}
+
 }

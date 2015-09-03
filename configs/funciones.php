@@ -399,6 +399,25 @@ function ir($direccion){
   header("Location: $direccion");
   exit();
 }
+
+/**
+ * Ajusta el monto para evitar overflow
+ * @param  real    $monto    Monto mensual
+ * @param  string $quincena  Quincena '1ERA' o '2DA'
+ * @return real              Monto parcial
+ */
+function ajuste_quincenal($monto,$quincena){
+  if( ($monto*100)%2==0 ){ // par
+    return $monto/2;
+  }else{ // impar
+    if ($quincena=='1ERA'){
+      return ($monto + 0.01)/2;
+    }else{ // '2DA'
+      return ($monto - 0.01)/2;
+    }
+  }
+}
+
 ///////
 function ver2($matriz) {
    $estilo='style="font-size:9pt;"';

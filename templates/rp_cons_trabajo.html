@@ -10,8 +10,7 @@
 	Ciencia y Tecnología, designado según  Resolución N° 04-2015 de Fecha 05/06/2015; por medio de presente hace constar que el ciudadano(a): 
 	<b>{$datos.nombre} {$datos.apellido} </b> titular de la C&eacute;dula de Identidad:<b>{$datos.nac}-{$datos.cedula}</b>,clasificada como 
 	<b>{$datos.clasificacion_id}</b>, Labora en <b>FUNDACITE TRUJILLO</b>, desde el <b>{$datos.fecha_ing}</b> ocupando el cargo de 
-	<b>{$datos.cargo_id}</b> de profesión <b>{$datos.grado_instruccion_id} {$datos.profesion_id} </b> 
-	devengando un salario normal de <b>Bs. {$datos.salario2}</b>	
+	<b>{$datos.cargo_id}</b> de profesión <b>{$datos.profesion_id}</b> devengando un salario normal de <b>Bs. {$datos.salario2}</b>	
 </p>
 <p> 
 	Constancia que se expide a petición de parte interesada en Trujillo con fecha {$fecha}
@@ -19,11 +18,14 @@
 <b>VA SIN ENMIENDA.</b>
 <p class="firma">
 		<br />
-		<center><hr width="300px" /></center>
+		<center><hr id="linea" width="300px" /></center>
 		<center><b>Msc. Ulises J. Osorio Paredes</b></center>
 		<center> <b>Director Ejecutivo de Fundacite-Trujillo</b></center>
 		<center>Resolución  N° 04-2015 de Fecha 005/06/2015</center>
 
 </p>
 </div>
+
+<input id="boton_imprimir" type="button" name="imprimir" value="Imprimir" onclick="window.print();">
+
 {include file="pie.html"}

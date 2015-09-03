@@ -50,16 +50,18 @@
 </thead>
 </table>
 </div>
-
-	En Trujillo, a los {$fecha}
+<p>
+En Trujillo, {$fecha}
+</p>
 <p class="firma">
 		<br />
-		<center><hr width="300px" /></center>
+		<center><hr id="linea" width="300px" /></center>
 		<center><b>{$datos.grado_instruccion_id} {$datos.nombre} {$datos.apellido}</b></center>
-		<center> <b>C.I {$datos.nac}-{$datos.cedula}</b></center>
+		<center> <b>C.I. {$datos.nac}-{$datos.cedula}</b></center>
 </div>
 </p>
 {else}
 <h3>AUN NO SE HA GENERADO EL PERIODO DE PAGO SOLICITADO, VERIFIQUE...</h3>
 {/if}
+<input id="boton_imprimir" type="button" name="imprimir" value="Imprimir" onclick="window.print();">
 {include file="pie.html"}

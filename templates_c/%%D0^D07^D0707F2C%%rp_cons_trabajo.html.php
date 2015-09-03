@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-19 19:26:35
+<?php /* Smarty version 2.6.26, created on 2015-09-03 16:08:32
          compiled from rp_cons_trabajo.html */ ?>
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "cabecera.html", 'smarty_include_vars' => array()));
@@ -23,10 +23,8 @@ unset($_smarty_tpl_vars);
 </b>, Labora en <b>FUNDACITE TRUJILLO</b>, desde el <b><?php echo $this->_tpl_vars['datos']['fecha_ing']; ?>
 </b> ocupando el cargo de 
 	<b><?php echo $this->_tpl_vars['datos']['cargo_id']; ?>
-</b> de profesión <b><?php echo $this->_tpl_vars['datos']['grado_instruccion_id']; ?>
- <?php echo $this->_tpl_vars['datos']['profesion_id']; ?>
- </b> 
-	devengando un salario normal de <b>Bs. <?php echo $this->_tpl_vars['datos']['salario2']; ?>
+</b> de profesión <b><?php echo $this->_tpl_vars['datos']['profesion_id']; ?>
+</b> devengando un salario normal de <b>Bs. <?php echo $this->_tpl_vars['datos']['salario2']; ?>
 </b>	
 </p>
 <p> 
@@ -36,13 +34,16 @@ unset($_smarty_tpl_vars);
 <b>VA SIN ENMIENDA.</b>
 <p class="firma">
 		<br />
-		<center><hr width="300px" /></center>
+		<center><hr id="linea" width="300px" /></center>
 		<center><b>Msc. Ulises J. Osorio Paredes</b></center>
 		<center> <b>Director Ejecutivo de Fundacite-Trujillo</b></center>
 		<center>Resolución  N° 04-2015 de Fecha 005/06/2015</center>
 
 </p>
 </div>
+
+<input id="boton_imprimir" type="button" name="imprimir" value="Imprimir" onclick="window.print();">
+
 <?php $_smarty_tpl_vars = $this->_tpl_vars;
 $this->_smarty_include(array('smarty_include_tpl_file' => "pie.html", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;

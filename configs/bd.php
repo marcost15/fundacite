@@ -1,8 +1,8 @@
 <?php
-$host='localhost';
-$login='root';
-$clave='12345';
-$bd='fundacite_personal';
+$host  = 'localhost';
+$login = 'root';
+$clave = '12345';
+$bd    = 'fundacite_personal';
 
 $link=mysql_connect($host,$login,$clave);
 mysql_select_db($bd);

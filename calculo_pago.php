@@ -132,11 +132,14 @@ foreach ($personal as $i=>$c)
 	$cuenta_a = count($personal[$i]['asignaciones']);
 	$personal[$i]['asignaciones'][$cuenta_a+1]['nombre'] = "COMPLEMENTO DE SUELDO Y SALARIO";
 	$personal[$i]['asignaciones'][$cuenta_a+1]['tipo'] = "A";	
-	$personal[$i]['asignaciones'][$cuenta_a+1]['monto'] = $complemento / 2;	
+//	$personal[$i]['asignaciones'][$cuenta_a+1]['monto'] = $complemento / 2;	
+	$personal[$i]['asignaciones'][$cuenta_a+1]['monto'] = ajuste_quincenal($complemento,$quincena);	
 	
 	$personal[$i]['asignaciones'][$cuenta_a+2]['nombre'] = "SUELDO";
 	$personal[$i]['asignaciones'][$cuenta_a+2]['tipo'] = "A";	
-	$personal[$i]['asignaciones'][$cuenta_a+2]['monto'] = $minimo / 2;	
+//	$personal[$i]['asignaciones'][$cuenta_a+2]['monto'] = $minimo / 2;	
+	$personal[$i]['asignaciones'][$cuenta_a+2]['monto'] = ajuste_quincenal($minimo,$quincena);		
+	
 	
 	$cuenta_d = count($personal[$i]['deducciones']);
 	$personal[$i]['deducciones'][$cuenta_d+1]['nombre'] = "S.S.O";

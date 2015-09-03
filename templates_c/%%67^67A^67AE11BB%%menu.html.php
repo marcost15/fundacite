@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2015-08-18 07:40:25
+<?php /* Smarty version 2.6.26, created on 2015-09-03 15:48:00
          compiled from ../menu/menu.html */ ?>
 ﻿<?php if ($_SESSION['usuario']['nivel_id'] == '1'): ?>
 <li><a href="#"><span>Admin BD</span></a>
