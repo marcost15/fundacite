@@ -1,5 +1,5 @@
 <?php
-require '../libreriasphp/Smarty/libs/Smarty.class.php';
+require './libs/libreriasphp/smarty/libs/smarty.class.php';
 
 $smarty = new Smarty;
 $smarty->compile_check = true;
